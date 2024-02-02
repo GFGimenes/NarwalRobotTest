@@ -1,0 +1,175 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link rel="stylesheet" href="~/css/RobotStyleIndex.css" />
+
+
+<div class="text-center">
+    <h1 class="display-4">R.O.B.O</h1>
+
+
+<div>
+    <div class="row">
+        <div class="holder">
+            <div class="robot">
+                <div class="shape left"><div></div><div></div><div></div><div></div></div>
+                <div class="shape right"><div></div><div></div><div></div><div></div></div>
+                <div class="shape2"></div>
+                <div class="shape3"><div></div><div></div><div></div><div></div></div>
+                <div class="shape4 left"><div></div><div></div><div></div></div>
+                <div class="shape4 right"><div></div><div></div></div>
+                <div class="shape5"><div></div><div></div><div></div><div></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="row">
+        <div class="col-md-4">
+            <h4>
+                Braço Esquerdo
+            </h4>
+            <div class="col-md-12">
+                Pulso
+            </div>
+            <div class="col-md-12">
+                    <input type="number" style="margin: 5px;" class="form-control" id="leftArmWrist" placeholder="Número de 1 a 7">
+            </div>
+            <div class="col-md-12">
+                Cotovelo
+            </div>
+            <div class="col-md-12">
+                    <input type="number" style="margin: 5px;" class="form-control" id="leftArmElbow" placeholder="Número de 1 a 4">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h4>
+                Cabeça
+            </h4>
+            <div class="col-md-12">
+                Rotação
+            </div>
+            <div class="col-md-12">
+                <input type="number" style="margin: 5px;" class="form-control" id="txtName" placeholder="Número de 1 a 5">
+            </div>
+            <div class="col-md-12">
+                Inclinação
+            </div>
+            <div class="col-md-12">
+                <input type="number" style="margin: 5px;" class="form-control" id="txtPrice" placeholder="Número de 1 a 3">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h4>
+                Braço Direito
+            </h4>
+            <div class="col-md-12">
+                Pulso
+            </div>
+            <div class="col-md-12">
+                <input type="number" style="margin: 5px;" class="form-control" id="txtPrice" placeholder="Número de 1 a 7">
+            </div>
+            <div class="col-md-12">
+                Cotovelo
+            </div>
+            <div class="col-md-12">
+                <input type="number" style="margin: 5px;" class="form-control" id="txtName" placeholder="Número de 1 a 4">
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin: 5px;">
+        <div class="col">
+            <button type="button" class="btn btn-primary" onclick="return Create()">Create Robot</button>
+            &nbsp;&nbsp;&nbsp;
+            <button type="button" class="btn btn-primary" onclick="return Update()">Update Robot</button>
+        </div>
+    </div>
+</div>
+
+
+<table class="table table-hover" id="tblPatients">
+    <thead>
+        <tr>
+            <th scope="col">Pulso Esquerdo</th>
+            <th scope="col">Cotovelo Esquerdo</th>
+            <th scope="col">Rotação</th>
+            <th scope="col">Inclinação</th>
+            <th scope="col">Pulso Direito</th>
+            <th scope="col">Cotovelo Direito</th>
+        </tr>
+    </thead>
+    <tbody id="tblBody">
+    </tbody>
+</table>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+        GetDetails();
+    });
+
+    let ProductId = '';
+
+    function Create() {
+
+        var options = {};
+        options.url = "https://localhost:7029/api/Robot/CreateRobot";
+        options.type = "POST";
+        options.contentType = "application/json";
+        options.dataType = "html";
+
+        options.success = function (msg) {
+            if (msg !== undefined && msg !== null) {
+                clear()
+                GetDetails();
+                alert('R.O.B.O Criado')
+            }
+
+        },
+            options.error = function () {
+                console.log("Erro. Contate o Administrador");
+            };
+        $.ajax(options);
+
+    }
+
+    function Update() {
+        var options = {};
+        options.url = "https://localhost:7029/api/Robot/UpdateRobot";
+        options.type = "PUT";
+        var obj = {};
+        obj.leftArmWrist = $("#leftArmWrist").val();
+        obj.leftArmElbow = $("#leftArmElbow").val();
+        obj.headTilt = $("#headTilt").val();
+        obj.headRotation = $("#headRotation").val();
+        obj.rightArmWrist = $("#rightArmWrist").val();
+        obj.rightArmElbow = $("#rightArmElbow").val();
+        options.data = JSON.stringify(obj);
+        options.contentType = "application/json";
+        options.dataType = "html";
+
+        options.success = function (msg) {
+            console.log(msg);
+
+            if (msg !== undefined && msg !== null) {
+                clear()
+                GetDetails();
+                alert('R.O.B.O Atualizado')
+            }
+        },
+            options.error = function () {
+                console.log("Erro. Contate o Administrador");
+            };
+        $.ajax(options);
+    }
+
+
+    function clear() {
+        $("#txtName").val('');
+        $("#txtPrice").val('');
+    }
+</script>

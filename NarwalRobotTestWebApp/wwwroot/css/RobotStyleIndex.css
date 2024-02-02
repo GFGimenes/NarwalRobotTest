@@ -1,0 +1,230 @@
+﻿.robot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 400px;
+    height: 400px;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+    .robot .shape {
+        position: absolute;
+        left: 50%;
+        bottom: 0%;
+        width: 12%;
+        height: 32%;
+        transform: translateX(-125%);
+    }
+
+        .robot .shape div:nth-child(1) {
+            position: absolute;
+            left: 50%;
+            bottom: 0%;
+            width: 100%;
+            height: 10%;
+            background: linear-gradient(45deg, #ced0d0, #f0f0f0, #ced0d0, #f0f0f0);
+            transform: translateX(-50%);
+        }
+
+        .robot .shape div:nth-child(2) {
+            position: absolute;
+            left: 50%;
+            bottom: 10%;
+            width: 100%;
+            height: 18%;
+            background-color: #444;
+            transform: translateX(-50%);
+            border-top-left-radius: 35%;
+            border-top-right-radius: 35%;
+        }
+
+        .robot .shape div:nth-child(3) {
+            position: absolute;
+            left: 50%;
+            bottom: 27%;
+            width: 67%;
+            height: 73%;
+            background: linear-gradient(45deg, #ced0d0, #f0f0f0, #ced0d0, #f0f0f0);
+            transform: translateX(-50%);
+        }
+
+        .robot .shape.right {
+            transform: translateX(25%);
+        }
+
+    .robot .shape2 {
+        position: absolute;
+        left: 50%;
+        bottom: 32%;
+        width: 26%;
+        height: 8%;
+        background-color: #333;
+        transform: translateX(-50%);
+        border-top-left-radius: 35%;
+        border-top-right-radius: 35%;
+    }
+
+    .robot .shape3 {
+        position: absolute;
+        left: 50%;
+        bottom: 39%;
+        width: 40%;
+        height: 30%;
+        transform: translateX(-50%);
+    }
+
+        .robot .shape3 div:nth-child(1) {
+            position: absolute;
+            left: 50%;
+            bottom: 0%;
+            width: 82%;
+            height: 90%;
+            background: linear-gradient(45deg, #ced0d0, #f0f0f0, #ced0d0, #f0f0f0);
+            transform: translateX(-50%);
+            border-radius: 8%;
+        }
+
+        .robot .shape3 div:nth-child(2) {
+            position: absolute;
+            left: 50%;
+            bottom: 90%;
+            width: 26%;
+            height: 10%;
+            background-color: #555;
+            transform: translateX(-50%);
+        }
+
+        .robot .shape3 div:nth-child(3) {
+            position: absolute;
+            left: 50%;
+            bottom: 64%;
+            width: 9%;
+            height: 18%;
+            background-color: #555;
+            transform: translateX(-555%)
+        }
+
+        .robot .shape3 div:nth-child(4) {
+            position: absolute;
+            left: 50%;
+            bottom: 64%;
+            width: 9%;
+            height: 18%;
+            background-color: #555;
+            transform: translateX(455%)
+        }
+
+    .robot .shape4 {
+        position: absolute;
+        left: 50%;
+        top: 34%;
+        width: 9%;
+        height: 40%;
+        transform: translateX(-310%);
+    }
+
+robot .shape4 div:nth-child(1) {
+    position: absolute;
+    left: 50%;
+    bottom: 15%;
+    width: 100%;
+    height: 10%;
+    background-color: #222;
+    transform: translateX(-50%);
+}
+
+.robot .shape4 div:nth-child(2) {
+    position: absolute;
+    left: 50%;
+    bottom: 25%;
+    width: 100%;
+    height: 75%;
+    background-color: #333;
+    transform: translateX(-50%);
+    border-top-left-radius: 40cm;
+    border-top-right-radius: 20cm;
+    border-bottom-left-radius: 12cm;
+    border-bottom-right-radius: 12cm;
+}
+
+.robot .shape4.right {
+    transform: translateX(210%) rotateY(180deg);
+}
+
+.robot .shape5 {
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    width: 34%;
+    height: 34%;
+    transform: translateX(-50%);
+}
+
+    .robot .shape5 div:nth-child(1) {
+        position: absolute;
+        left: 50%;
+        bottom: 4%;
+        width: 72%;
+        height: 72%;
+        background: linear-gradient(45deg, #ced0d0, #f0f0f0, #ced0d0, #f0f0f0);
+        transform: translateX(-50%);
+        border-radius: 100%;
+        overflow: hidden;
+    }
+
+        .robot .shape5 div:nth-child(1):before {
+            content: '';
+            left: 50%;
+            top: 22%;
+            position: absolute;
+            width: 200%;
+            height: 28%;
+            background-color: #41aad8;
+            transform: translateX(-50%);
+        }
+
+    .robot .shape5 div:nth-child(2) {
+        position: absolute;
+        left: 50%;
+        top: 40%;
+        width: 72%;
+        height: 20%;
+        transform: translateX(-50%);
+        overflow: hidden;
+    }
+
+        .robot .shape5 div:nth-child(2):before, .shape5 div:nth-child(2):after {
+            content: "";
+            position: absolute;
+        }
+
+        .robot .shape5 div:nth-child(2):before {
+            left: 50%;
+            top: 28%;
+            width: 200%;
+            height: 64%;
+            background-color: #fff;
+            transform: translateX(-50%) rotateZ(45deg);
+            opacity: 0.4;
+        }
+
+        .robot .shape5 div:nth-child(2):after {
+            left: 50%;
+            top: 28%;
+            width: 200%;
+            height: 34%;
+            background-color: #fff;
+            transform: translateX(-42%) rotateZ(45deg);
+            opacity: 0.4;
+        }
+
+.robot .shape6 {
+    position: absolute;
+    left: 50%;
+    top: 17%;
+    width: 7%;
+    height: 21%;
+    transform: translateX(50%) rotateZ(35deg);
+    z-index: -2;
+    transform-origin: bottom;
+}
